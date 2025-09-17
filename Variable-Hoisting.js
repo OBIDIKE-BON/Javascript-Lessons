@@ -37,15 +37,15 @@ const user = {}
 Object.defineProperty(user, "id", {
   value: 101,
   writable: false,
-  enumarable: true,
-  configuraable: false,
+  enumarable: false,
+  configuraable: true,
 
 })
 
 console.log(user);
 
-user.id = 200;
-console.log(user.id); console.log(user);
+
+console.log(user.value); console.log(user);
 
 console.log(typeof (user.id));
 
@@ -60,10 +60,15 @@ Object.defineProperty(user, 'DOB', {
   configurable: false,
 })
 
+user.value = '10/06/2000'
+
 console.log(user.DOB);
 console.log(typeof (user.DOB));
 const newob = Object.getOwnPropertyDescriptors(user);
 
-console.log(Object.getOwnPropertyDescriptor(newob.age, "writable"));
+console.log(Object.getOwnPropertyDescriptor(newob.DOB, "writable"));
+
+
+
 
 
